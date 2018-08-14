@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import text from './data/tmwwt.json';
 import Titlepage from './Titlepage.js';
+import ProgressBar from './ProgressBar';
 import Sidebar from './Sidebar.js';
 import Section from './Section.js';
 import Prevnext from './Prevnext.js';
@@ -24,6 +25,7 @@ const initialState = {
       this.setState({
         position: newPosition
       })
+      window.scrollTo(0,0);
     };
 
     previousChapter = (currPosition) => {
@@ -46,8 +48,8 @@ const initialState = {
         <header className="App-header">
           <Titlepage 
             myText={text.book.content[this.state.position].heading}
-            currPosition={this.state.position}
           />
+          <ProgressBar/>
         </header>
         <Sidebar
           myText={text}
