@@ -6,11 +6,11 @@ const Sidebar = ({myText, onClick}) => {
     <div className="menu">
         <ul className="menu">
             {myText.book.content.map(content => 
-                <li key= {content.position} 
-                    id={`toc-${content.position}`} 
-                    onClick={ () => onClick(content.position)}>
-                    {content.heading}
-                </li>        
+                    <li key= {content.position} 
+                        id={`toc-${content.position}`} 
+                        onClick={ () => onClick(content.position)}>
+                        {content.heading}
+                    </li>        
                 )
             }
         </ul>
